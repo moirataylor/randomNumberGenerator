@@ -17,6 +17,20 @@ public class Main {
         do {
             number = generateGuess(100, 1);
             System.out.println("pick a number between 1 and 100");
+            do {
+                Scanner keyboard;
+                keyboard = new Scanner(System.in);
+                guess = keyboard.nextInt();
+                if (guess > number) {
+                    System.out.println("too high, please guess again");
+                }
+                else if (guess < number) {
+                    System.out.println("too low, please guess again");
+                }
+                else {
+                    System.out.println("Correct! Do you want to play again?");
+                }
+            } while (guess != number);
         } while (!(number < 2));
     }
 

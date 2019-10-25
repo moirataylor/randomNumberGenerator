@@ -11,7 +11,7 @@ public class Main {
         //must use random number generator and be explicit on #'s to guess from
         //must have 5 commits or more (method,game loop, logic loop)
 
-        int pickedNumber, number, guess;
+        int number, guess;
 
 
         do {
@@ -21,15 +21,7 @@ public class Main {
                 Scanner keyboard;
                 keyboard = new Scanner(System.in);
                 guess = keyboard.nextInt();
-                if (guess > number) {
-                    System.out.println("too high, please guess again");
-                }
-                else if (guess < number) {
-                    System.out.println("too low, please guess again");
-                }
-                else {
-                    System.out.println("Correct! Do you want to play again?");
-                }
+              System.out.println(guessFeedback (guess, number));
             } while (guess != number);
         } while (!(number < 2));
     }
@@ -41,9 +33,20 @@ public class Main {
         return pickedNumber;
     }
 
+    public static String guessFeedback(int guess, int answer) {
+        if (guess > answer) {
+            return ("too high, please guess again");
+        } else if (guess < answer) {
+            return ("too low, please guess again");
+        } else {
+            return ("Correct! Do you want to play again?");
 
+        }
 
+    }
 }
+
+
 
 
 
